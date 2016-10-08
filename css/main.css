@@ -1,0 +1,179 @@
+* {
+  box-sizing: border-box;
+}
+
+.clearfix,
+.clearfix:after,
+.clearfix:before {
+  content: "";
+  clear: both;
+  display: block;
+}
+
+body {
+  margin: 0;
+  padding: 0 30px;
+  background-color: steelblue;
+}
+
+body,
+input,
+textarea,
+button {
+  font-family: Roboto, Arial, "Helvetica Neue", Helvetica, sans-serif;
+  color: #333;
+}
+
+#container {
+  width: 800px;
+  margin: 0 auto;
+}
+
+
+/****************   HEADER   ****************/
+h1 {
+  margin-bottom: 30px;
+  font-family: Montserrat, Arial, "Helvetica Neue", Helvetica, sans-serif;
+  font-size: 3.5rem;
+  color: #fff;
+}
+
+
+/****************   POSTS   ****************/
+.comment {
+  width: 800px;
+  display: -webkit-flex;
+  display: -moz-flex;
+  display: -ms-flex;
+  display: -o-flex;
+  display: flex;
+  position: relative;
+  margin-bottom: 15px;
+  padding: 30px;
+  color: #555;
+  animation: comment-slide-l .6s;
+}
+
+@keyframes comment-slide-l {
+  0% {
+    left: -800px;
+    opacity: 0;
+  }
+
+  100% {
+    left: 0;
+    opacity: 1;
+  }
+}
+
+
+.comment:last-of-type {
+  margin-bottom: 30px;
+}
+
+.comment:nth-child(odd) {
+  background-color: #f0f0f0;
+}
+
+.comment:nth-child(even) {
+  background-color: #fff;
+  animation: comment-slide-r .6s;
+}
+
+@keyframes comment-slide-r {
+  0% {
+    right: -800px;
+    opacity: 0;
+  }
+
+  100% {
+    right: 0;
+    opacity: 1;
+  }
+}
+
+.image {
+  flex-shrink: 0;
+}
+
+.user-img {
+  width: 100%;
+}
+
+.comment-info {
+  margin-left: 30px;
+  flex-shrink: 2;
+}
+
+.comment-name {
+  margin-top: 0;
+  margin-bottom: 10px;
+  font-size: 1.5rem;
+  color: #383331;
+}
+
+hr {
+  width: 40%;
+  margin-left: 0;
+  border: 0;
+  border-bottom: 1px solid #ccc;
+}
+
+.timestamp {
+  margin-bottom: 0;
+  color: #999;
+}
+
+
+/****************   FORM   ****************/
+form {
+  clear: both;
+  width: 800px;
+  /*margin: 50px auto 30px;*/
+  /*margin-top: 50px;*/
+  /*margin-bottom: 30px;*/
+  padding: 30px;
+  background-color: #2C3E50;
+}
+
+input, 
+textarea,
+button {
+  display: block;
+  border: 0;
+  font-size: 1.5rem;
+  outline: none;
+}
+
+input,
+textarea {
+  width: 100%;
+  margin: 0 auto 15px;
+  padding: 10px;
+  background-color: #fff;
+  transition: background .3s ease-in-out;
+}
+
+/*input:focus,
+textarea:focus {
+  background-color: #fff;
+}*/
+
+textarea {
+  height: 200px;
+  font-weight: 300;
+}
+
+button {
+  float: right;
+  padding: 10px 20px;
+  text-transform: uppercase;
+  color: #fff;
+  background-color: #82b446;
+  cursor: pointer;
+  transition: background .1s ease;
+}
+
+button:hover {
+  background-color: #6e983c;
+}
