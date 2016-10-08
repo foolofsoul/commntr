@@ -22,6 +22,9 @@ function addTimestamp (){
   if ( hour >= 12 ) {
     dayNight = "PM"
     hour -= 12
+  } else if (hour === 0) {
+    dayNight = "AM"
+    hour += 12
   } else {
     dayNight = "AM"
   }

@@ -16,6 +16,12 @@ body {
   background-color: steelblue;
 }
 
+@media (max-width: 500px){
+  body {
+    padding: 0 10px;
+  }
+}
+
 body,
 input,
 textarea,
@@ -25,7 +31,7 @@ button {
 }
 
 #container {
-  width: 800px;
+  max-width: 800px;
   margin: 0 auto;
 }
 
@@ -38,10 +44,16 @@ h1 {
   color: #fff;
 }
 
+@media (max-width: 500px){
+  h1 {
+    font-size: 2.5rem;
+  }
+}
+
 
 /****************   POSTS   ****************/
 .comment {
-  width: 800px;
+  max-width: 800px;
   display: -webkit-flex;
   display: -moz-flex;
   display: -ms-flex;
@@ -52,17 +64,31 @@ h1 {
   padding: 30px;
   color: #555;
   animation: comment-slide-l .6s;
+  box-shadow: 0 3px 6px -2px rgba(0,0,0,0.8);
+}
+
+@media (max-width: 500px){
+  .comment {
+    -webkit-flex-direction: column;
+    -moz-flex-direction: column;
+    -ms-flex-direction: column;
+    -o-flex-direction: column;
+    flex-direction: column;
+    margin-bottom: 10px;
+  }
 }
 
 @keyframes comment-slide-l {
   0% {
     left: -800px;
     opacity: 0;
+    transition: ease-in-out;
   }
 
   100% {
     left: 0;
     opacity: 1;
+    transition: ease-in-out;
   }
 }
 
@@ -71,24 +97,32 @@ h1 {
   margin-bottom: 30px;
 }
 
+@media (max-width: 500px){
+  .comment:last-of-type {
+    margin-bottom: 15px;
+  }
+}
+
 .comment:nth-child(odd) {
   background-color: #f0f0f0;
+  animation: comment-slide-r .6s;
 }
 
 .comment:nth-child(even) {
   background-color: #fff;
-  animation: comment-slide-r .6s;
 }
 
 @keyframes comment-slide-r {
   0% {
     right: -800px;
     opacity: 0;
+    transition: ease-in-out;
   }
 
   100% {
     right: 0;
     opacity: 1;
+    transition: ease-in-out;
   }
 }
 
@@ -100,9 +134,28 @@ h1 {
   width: 100%;
 }
 
+@media (max-width: 500px){
+  .image {
+    position: absolute;
+    width: 30px;
+  }
+
+  .user-image {
+    /*display: none;*/
+    width: 30px;
+    height: 30px;
+  }
+}
+
 .comment-info {
   margin-left: 30px;
   flex-shrink: 2;
+}
+
+@media (max-width: 500px){
+  .comment-info {
+    margin-left: 0;
+  }
 }
 
 .comment-name {
@@ -112,11 +165,23 @@ h1 {
   color: #383331;
 }
 
+@media (max-width: 500px){
+  .comment-name {
+    margin-left: 40px;
+  }
+}
+
 hr {
   width: 40%;
   margin-left: 0;
   border: 0;
   border-bottom: 1px solid #ccc;
+}
+
+@media (max-width: 500px){
+  hr {
+    width: 50%;
+  }
 }
 
 .timestamp {
@@ -128,12 +193,18 @@ hr {
 /****************   FORM   ****************/
 form {
   clear: both;
-  width: 800px;
+  max-width: 800px;
   /*margin: 50px auto 30px;*/
   /*margin-top: 50px;*/
   /*margin-bottom: 30px;*/
   padding: 30px;
   background-color: #2C3E50;
+}
+
+@media (max-width: 500px){
+  form {
+    padding: 15px;
+  }
 }
 
 input, 
@@ -172,6 +243,13 @@ button {
   background-color: #82b446;
   cursor: pointer;
   transition: background .1s ease;
+}
+
+@media (max-width: 500px){
+  button {
+    display: block;
+    width: 100%;
+  }
 }
 
 button:hover {
